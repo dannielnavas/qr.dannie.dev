@@ -11,12 +11,10 @@ export class AppService {
     if (key !== process.env.KEY) {
       throw new ForbiddenException('Invalid key');
     }
-    const qrCode = await QRCode.toString(url, {
-      type: 'utf8',
-      width: 600,
+    const qrCode = await QRCode.toDataURL(url, {
       errorCorrectionLevel: 'H',
+      width: 500,
     });
-
     return qrCode;
   }
 }
