@@ -14,6 +14,7 @@ export class AppService {
     const qrCode = await QRCode.toDataURL(url, {
       errorCorrectionLevel: 'H',
       width: 500,
+      margin: 1,
     });
     return qrCode;
   }
